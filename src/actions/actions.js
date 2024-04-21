@@ -1,0 +1,15 @@
+export const ADD_PRUDUCT = "ADD_PRUDUCT";
+export const DELETE_PRODUCT = "DELETE_PRODUCT";
+
+export const addProduct = (product) => {
+    return{
+        type: ADD_PRUDUCT,
+        payload: product
+    };
+};
+export const deleteProduct = (name) => {
+    return{
+        type: DELETE_PRODUCT,
+        payload: name
+    };
+};
