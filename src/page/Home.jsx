@@ -3,7 +3,7 @@ import coke from '../Coke1.5.png';
 import sprite from '../Sprite.png';
 import snickers from '../Snickers.png';
 import { useDispatch } from "react-redux";
-import { addProduct,deleteProduct } from "../actions/actions";
+import { ADD_PRUDUCT, addProduct,deleteProduct,increment } from "../actions/actions";
 
 const productsTypes = [
     {
@@ -49,7 +49,7 @@ export default function Home(){
       <h1>{item.productType}</h1>
         {item.products.length > 0 && item.products.map(insideItem => (
             insideItem && (
-        <div className='product'>
+        <div className='product' key={insideItem.name}>
           <div className='product-image'>
             <img src={insideItem.productImage} height={150} alt='coke' />
           </div>
@@ -61,10 +61,13 @@ export default function Home(){
             <h3>{insideItem.price} ₸</h3>
           </div>
           <div>
-            <button onClick={() => dispatch(addProduct(insideItem))}>Add</button>
+            <button onClick={() => dispatch({type:ADD_PRUDUCT,payload: insideItem})}>Add</button>
           </div>
           <div>
             <button onClick={() => dispatch(deleteProduct(insideItem.name))}>Delete</button>
+          </div>
+          <div>
+            <button onClick={() => dispatch(increment(insideItem.name))}>Increment</button>
           </div>
         </div>
             )
