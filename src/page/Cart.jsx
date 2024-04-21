@@ -12,6 +12,7 @@ export default function Cart(){
                     {products?.map((product) => product && (
                         <div className="product">
                             <p key={product.name} className="n">
+                                <img src={product.productImage} height={150}/>
                                 <p>{product.name}</p>
                                 <p>{product.description}</p>
                                 <p>{product.price}</p>
