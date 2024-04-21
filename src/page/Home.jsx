@@ -4,6 +4,7 @@ import sprite from '../Sprite.png';
 import snickers from '../Snickers.png';
 import { useDispatch } from "react-redux";
 import { ADD_PRUDUCT, addProduct,deleteProduct,increment } from "../actions/actions";
+import { useNavigate } from "react-router-dom";
 
 const productsTypes = [
     {
@@ -40,6 +41,7 @@ const productsTypes = [
   ]
 
 export default function Home(){
+  const navigateTo = useNavigate();
     const dispatch = useDispatch();
 
     return (
@@ -74,6 +76,7 @@ export default function Home(){
         ))}
       </div>
       ))}
+      <button onClick={() => navigateTo("/cart")}>Pay</button>
         </div>
     )
 }
