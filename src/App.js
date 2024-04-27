@@ -5,7 +5,7 @@ import Cart from './page/Cart';
 function App() {
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: "/", 
       element: <Home/>
     },
     {
